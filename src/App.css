@@ -1,38 +1,172 @@
-.App {
-  text-align: center;
+#testLayout{
+  width: 100vw;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  background-color:#eee;
+  height: calc(var(--vh,1vh) * 100);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.startpage{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffea35;
+  width: 100%;
+  max-width: 900px;
+  height: 100%;
+  color: #413730;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.startlogo{
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 25px;
+  font-weight: 700;
+}
+.startlogo div:nth-child(1){
+  background-color: #413730;
+  color: #ffea35;
+  width: 100px;
+  height: 80px;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border-radius: 50%;
+}
+.startlogo div:nth-child(2){
+  margin-bottom: 15px;
+  font-size: 20px;
+  line-height: 17px;
+}
+.startbutton{
+  font-size: 17px;
+  font-weight: 700;
+  margin-top: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.questionLayout{
+  display: flex;
+  flex-direction: column;
+  background-color: #bacee0;
+  width: 100%;
+  max-width: 900px;
+  height: 100%;
+  overflow: hidden;
+}
+.mbtiTitle{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  padding: 15px;
+  box-sizing: border-box;
+  font-weight: 700;
+}
+.mbtiTitle div:nth-child(1){
+  display: flex;
+  flex: 1;
+}
+.questionList{
+  flex-direction: column;
+  height: 100%;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+.questionList::-webkit-scrollbar{
+  display: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.qLayout{
+  display: flex;
+  flex: 1;
+  margin: 10px 15px 5px 15px;
+}
+.aLayout{
+  width: 100%;
+  background-color: #fff;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.proflieImg{
+  display: flex;
+  flex-direction: column;
+  width: 40px;
+  height: 40px;
+  background-color: #a1b6e9;
+  border-radius: 15px;
+  margin-right: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.proflieImg div:nth-child(1){
+  background-color: #cbd6f2;
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+}
+.proflieImg div:nth-child(2){
+  background-color: #cbd6f2;
+  width: 16px;
+  height: 8px;
+  border-radius: 8px 8px 0px 0px;
+}
+
+.chatLayout{
+  display: flex;
+  flex-direction: column;
+
+}
+.chatBox{
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  max-width: 60vw;
+  margin: 3px 0px 12px 0px;
+}
+.chatBox div:nth-child(1){
+  color: #fff;
+  font-size: 12px;
+  margin-top: 8px;
+}
+.chatBox div:nth-child(2){
+  padding: 7px 10px 7px 10px;
+  background-color: #fff;
+  margin-left: -4px;
+  border-radius: 10px;
+  text-align: start;
+}
+.aChatBox{
+  display: flex;
+  width: 100%;
+  font-size: 22px;
+  color: #969696;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 25px;
+}
+.aChatBox div:nth-child(1){
+  display: flex;
+  flex: 1;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.aChatBox div:nth-child(2){
+  padding: 10px;
+}
+
+.answerBox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  text-align: center;
+  box-shadow: 2px 2px 0px #ededed;
+  border: 1px solid #ededed;
+  margin: 0px 20px 15px 20px;
+  border-radius: 10px;
 }
