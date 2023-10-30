@@ -157,8 +157,33 @@ function App() {
           }
         </div>
         :
-        <div>
-          결과페이지
+        <div className='questionLayout'>
+          <div className='mbtiTitle'>
+            <div>MBTI 테스트</div>
+            <div onClick={() => window.location.reload()}>다시하기</div>
+          </div>
+                <div className='questionList' style={{display:'flex'}}>
+                  {console.log(mbtiList)}
+                  <div className='qLayout'>
+                    <div className='proflieImg'>
+                      <div></div>
+                      <div></div>
+                    </div>
+                    <div className='chatLayout'>
+                      <div className='chatBox'>
+                        <div>◀</div><div>결과내용</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='aLayout'>
+                    <div className='aChatBox'>
+                      <div>+</div><div>#</div>
+                    </div>
+                          <div>
+                            결과입니다.
+                          </div>
+                  </div>
+                </div>
         </div>
       }
     </div>
