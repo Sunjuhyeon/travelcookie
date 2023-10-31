@@ -94,8 +94,47 @@ function App() {
     setPage(page+1)
 
     if(i+1 === questionList.length){
-      console.log("결과보기")
+      setMbti()
     }
+  }
+
+  const [mbtiContent, setMbtiContent] = useState([])
+  function setMbti(){
+    let mc = [
+      {mbti:'ENTP', contents:['박학다식하고, 독창적이다.','끊임없이 새로운 시도를 한다.']},
+      {mbti:'INTP', contents:['지적 호기심이 높으며,','잠재력과 가능성을 중요시한다.']},
+      {mbti:'ESFJ', contents:['사람에 대한 관심이 많다.','친절하다. 동정심이 많다.']},
+      {mbti:'ESTP', contents:['느긋하고, 관용적이며, 타협을 잘한다.','현실적 문제 해결에 능숙하다.']},
+      {mbti:'ISFJ', contents:['차분하고 헌신적이며, 인내심이 강해.','타인의 감정변화에 주의를 기울여줘.']},
+      {mbti:'ISTP', contents:['과묵하고 분석적이며','적응력이 강하다.']},
+      {mbti:'ENFJ', contents:['사교적이고, 타인의 의견을 존중한다.','비판을 받으면 예민하게 반응한다.']},
+      {mbti:'INFJ', contents:['높은 통찰력으로 사람들에게 영감을 준다.','공동체의 이익을 중요시한다.']},
+      {mbti:'ENFP', contents:['상상력이 풍부하고, 순발력이 뛰어나다.','일상적인 활동에 지루함을 느낀다.']},
+      {mbti:'INFP', contents:['성실하고 이해심 많으며, 개방적이다.','잘 표현하지 않으나, 내적 신념이 강하다.']},
+      {mbti:'ESFP', contents:['호기심이 많으며, 개방적이다.','구체적인 사실을 중시한다.']},
+      {mbti:'ISFP', contents:['온화하고 겸손하다.','삶의 여유를 만끽한다.']},
+      {mbti:'ESTJ', contents:['체계적으로 일하고, 규칙을 준수한다.','사실적 목표 설정에 능하다.']},
+      {mbti:'ISTJ', contents:['책임감이 강하며, 현실적이야.','매사에 철저하고 보수적이야.']},
+      {mbti:'INTJ', contents:['의지가 강하고, 독립적이다.','분석력이 뛰어나다.']},
+      {mbti:'ENTJ', contents:['철저한 준비를 하며, 활동적이다.','통솔력이 있으며, 단호하다.']},
+    ]
+
+    let IorE = 
+    mbtiList.find(function(data){return data.name === 'I'}).count >
+    mbtiList.find(function(data){return data.name === 'E'}).count ? 'I':'E'
+    let SorN = 
+    mbtiList.find(function(data){return data.name === 'S'}).count >
+    mbtiList.find(function(data){return data.name === 'N'}).count ? 'S':'N'
+    let ForT = 
+    mbtiList.find(function(data){return data.name === 'F'}).count >
+    mbtiList.find(function(data){return data.name === 'T'}).count ? 'F':'T'
+    let PorJ = 
+    mbtiList.find(function(data){return data.name === 'P'}).count >
+    mbtiList.find(function(data){return data.name === 'J'}).count ? 'P':'J'
+    
+    let mbti = IorE + SorN + ForT + PorJ
+
+    setMbtiContent(mc.filter(v => v.mbti === mbti)[0])
   }
 
   return (
@@ -171,17 +210,26 @@ function App() {
                     </div>
                     <div className='chatLayout'>
                       <div className='chatBox'>
-                        <div>◀</div><div>결과내용</div>
+                        <div>◀</div><div>당신의 mbti는 {mbtiContent.mbti}입니다!</div>
                       </div>
+                      <div className='chatBox'>
+                        <div>◀</div><div>{mbtiContent.mbti}는요.</div>
+                      </div>
+                      {
+                        mbtiContent.contents.map((v, i) => {
+                          return(
+                            <div className='chatBox' key={i}>
+                              <div>◀</div><div>{v}</div>
+                            </div>
+                          )
+                        })
+                      }
                     </div>
                   </div>
                   <div className='aLayout'>
                     <div className='aChatBox'>
                       <div>+</div><div>#</div>
                     </div>
-                          <div>
-                            결과입니다.
-                          </div>
                   </div>
                 </div>
         </div>
